@@ -1,0 +1,453 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khá STORE - Piano Shop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .piano {
+            margin: 20px;
+            border: 1px solid #ccc;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+            width: 200px;
+        }
+        .piano:hover {
+            transform: scale(1.05);
+        }
+        .piano img {
+            width: 100%;
+            height: auto;
+        }
+        .piano h2, .piano p {
+            margin: 10px;
+        }
+        .buy-now {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<script>
+// Giả sử giá của từng sản phẩm là cố định và được lưu trữ sẵn trong một object
+const productPrices = {
+    'Đàn Piano Atlas A2': 356000000,
+    'Đàn Piano Điện Roland': 67000000,
+    'Đàn Piano cơ Eavestaff': 96500000,
+    'Đàn Piano Yamaha YDP': 18600000,
+    'Đàn Piano đệm silicon': 670000,
+    'Đàn Piano Yamaha CLP 760': 67000000,
+    'Đàn Piano Mozart': 14000000,
+    'Đàn Piano Janpan': 2300000,
+    'Đàn Piano Samick JM-600BM': 1567000000,
+    'Đàn Piano Kawai': 450000000
+};
+
+function addToCart(productName) {
+    const cartItems = document.getElementById('cart-items');
+    const totalPrice = document.getElementById('total-price');
+
+    // Tạo một mục mới cho giỏ hàng
+    const newItem = document.createElement('li');
+    newItem.textContent = productName + ' - ' + productPrices[productName].toLocaleString() + 'đ';
+    cartItems.appendChild(newItem);
+
+    // Cập nhật tổng giá tiền
+    let currentTotal = parseInt(totalPrice.textContent.replace(/\D/g, '') || '0');
+    currentTotal += productPrices[productName];
+    totalPrice.textContent = currentTotal.toLocaleString() + 'đ';
+}
+</script>
+<script>
+function filterProducts() {
+    var input = document.getElementById('search-input');
+    var filter = input.value.toUpperCase(); // Chuyển nội dung tìm kiếm thành chữ hoa để so sánh không phân biệt chữ hoa chữ thường
+    var pianos = document.getElementsByClassName('piano');
+    var productName, i, textValue;
+
+    for (i = 0; i < pianos.length; i++) {
+        productName = pianos[i].getElementsByTagName("h2")[0];
+        textValue = productName.textContent || productName.innerText;
+        if (textValue.toUpperCase().indexOf(filter) > -1) {
+            pianos[i].style.display = "";
+        } else {
+            pianos[i].style.display = "none";
+        }
+    }
+}
+</script>
+<body>
+
+    <nav>
+		<!DOCTYPE html>
+<html lang="vi">
+    <nav>
+	<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khá STORE - Đàn Piano</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chào mừng đến với Khá STORE</h1>
+        <p>Mua sắm các loại đàn piano chất lượng cao</p>
+    </header>
+    <nav>
+        <a href="#">Trang Chủ</a>
+        <a href="#">Sản Phẩm</a>
+        <a href="#" onclick="showContactForm()">Liên Hệ</a>
+        <a href="#" id="accountLink">Tài Khoản</a> <!-- Thêm liên kết mục tài khoản -->
+        <a href="#" class="hidden accountOptions" onclick="showLoginForm()">Đăng Nhập</a>
+        <a href="#" class="hidden accountOptions" onclick="showRegisterForm()">Đăng Ký</a>
+    </nav>
+    <script>
+        document.getElementById('accountLink').addEventListener('click', function() {
+            var accountOptions = document.querySelectorAll('.accountOptions');
+            accountOptions.forEach(function(option) {
+                if (option.style.display === 'none' || option.style.display === '') {
+                    option.style.display = 'block';
+                } else {
+                    option.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+	</head>
+	<style>
+	
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    nav a {
+        color: #ffffff; /* Màu chữ cho các liên kết */
+        background-color: #007BFF; /* Màu nền cho các liên kết */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+
+    nav a:hover {
+        background-color: #0056b3; /* Màu khi hover */
+    }
+
+    #loginForm, #registerForm {
+        background-color: #f8f9fa; /* Màu nền cho form */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Đổ bóng cho form */
+        width: 300px;
+        margin: 20px auto;
+    }
+
+    #loginForm label, #registerForm label {
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    #loginForm input[type="text"], #loginForm input[type="password"],
+    #registerForm input[type="text"], #registerForm input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 20px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #loginForm input[type="button"], #registerForm input[type="button"] {
+        background-color: #28a745; /* Màu nền cho nút */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #loginForm input[type="button"]:hover, #registerForm input[type="button"]:hover {
+        background-color: #218838; /* Màu khi hover */
+    }
+</style>
+<style>
+    #contactForm {
+        background-color: #f0f0f0; /* Màu nền cho form */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+        width: 300px;
+        margin: 20px auto;
+    }
+
+    #contactForm h2 {
+        color: #333; /* Màu chữ cho tiêu đề */
+    }
+
+    #contactForm label {
+        display: block;
+        margin-bottom: 10px;
+        color: #666; /* Màu chữ cho nhãn */
+    }
+
+    #contactForm input[type="text"], #contactForm input[type="email"], #contactForm textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+    }
+
+    #contactForm input[type="submit"] {
+        background-color: #4CAF50; /* Màu nền cho nút gửi */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #contactForm input[type="submit"]:hover {
+        background-color: #45a049; /* Màu khi rê chuột */
+    } 
+	
+</style>
+
+    <div id="contactForm" style="display:none;">
+        <h2> Liên Hệ Shop</h2>
+        <form>
+            <label for="name">Tên:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Tin Nhắn:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="Gửi">
+        </form>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" style="display:none;">
+        <h2>Đăng Nhập</h2>
+        <form>
+            <label for="username">Tên người dùng:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Mật khẩu:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <input type="button" value="Đăng nhập" onclick="loginUser()">
+        </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div id="registerForm" style="display:none;">
+        <h2>Đăng Ký</h2>
+        <form>
+            <label for="newUsername">Tên người dùng mới:</label><br>
+            <input type="text" id="newUsername" name="newUsername"><br>
+            <label for="newPassword">Mật khẩu mới:</label><br>
+            <input type="password" id="newPassword" name="newPassword"><br>
+            <input type="button" value="Đăng ký" onclick="registerUser()">
+        </form>
+    </div>
+
+    <script>
+    function showContactForm() {
+        document.getElementById('contactForm').style.display = 'block';
+    }
+
+    function showLoginForm() {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('registerForm').style.display = 'none';
+    }
+
+    function showRegisterForm() {
+        document.getElementById('registerForm').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+    }
+
+    function loginUser() {
+        // Here you can add AJAX to verify user
+        alert('Login function to be implemented');
+    }
+
+    function registerUser() {
+        // Here you can add AJAX for user registration
+        alert('Registration function to be implemented');
+    }
+    </script>
+</body>
+    </nav>
+	<body>
+    </nav>
+	<div id="search-box">
+    <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." oninput="filterProducts()">
+    <button onclick="filterProducts()">Tìm Kiếm</button>
+	<div id="filter-box">
+    <input type="number" id="min-price" placeholder="Giá tối thiểu">
+    <input type="number" id="max-price" placeholder="Giá tối đa">
+    <button onclick="filterByPrice()">Lọc theo giá</button>
+</div>
+	
+</div>
+<body>
+
+	
+
+    <!-- Phần chính chứa sản phẩm và form liên hệ -->
+    <div id="contactForm" style="display:none;">
+        <h2>Shop Liên Hệ</h2>
+        <form>
+            <label for="name">Tên:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Tin Nhắn:</label><br>
+            <textarea id="message" name="message"></textarea><br>
+            <input type="submit" value="Gửi">
+			
+        </form>
+    </div>
+	
+
+    <script>
+    function showContactForm() {
+        var form = document.getElementById('contactForm');
+        form.style.display = 'block';
+    }
+    </script>
+</body>
+    <div class="content">
+        <div class="piano">
+            <img src="D:\tkw_khá\1.jpg" alt="Đàn Piano Yamaha">
+            <h2>Đàn Piano Yamaha</h2>
+            <p>32 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Yamaha')">Mua ngay</button>
+        </div>
+        <div class="piano">
+            <img src="D:\tkw_khá\2.jpg" alt="Đàn Piano Steinway">
+            <h2>Đàn Piano Steinway</h2>
+            <p>150 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Steinway')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\3.jpg" alt="Đàn Piano Atlas A2">
+            <h2>Đàn Piano Atlas A2</h2>
+            <p>356 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Atlas A2')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\4.jpg" alt="Đàn Piano Điện Roland">
+            <h2>Đàn Piano Điện Roland</h2>
+            <p>67 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Điện Roland')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\5.jpg" alt="Đàn Piano cơ Eavestaff ">
+            <h2>Đàn Piano cơ Eavestaff </h2>
+            <p>96 500 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano cơ Eavestaff ')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\6.jpg" alt="Đàn Piano Yamaha YDP">
+            <h2>Đàn Piano Yamaha YDP</h2>
+            <p>18 600 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Yamaha YDP')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\7.jpg" alt="Đàn Piano đệm silicon">
+            <h2>Đàn Piano đệm silicon</h2>
+            <p>670 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano đệm silicon')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\8.jpg" alt="Đàn Piano Yamaha CLP 760">
+            <h2>Đàn Piano Yamaha CLP 760</h2>
+            <p>67 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Yamaha CLP 760')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\9.jpg" alt="Đàn Piano Mozart">
+            <h2>Đàn Piano Mozart</h2>
+            <p>14 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Mozart')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\10.jpg" alt="Đàn Piano Janpan">
+            <h2>Đàn Piano Janpan</h2>
+            <p>2 300 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Janpan')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\11.jpg" alt="Đàn Piano Samick JM-600BM">
+            <h2>Đàn Piano Samick JM-600BM</h2>
+            <p>1 567 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Samick JM-600BM')">Mua ngay</button>
+        </div>
+		 <div class="piano">
+            <img src="D:\tkw_khá\12.jpg" alt="Đàn Piano Kawai">
+            <h2>Đàn Piano Kawai</h2>
+            <p>450 000 000đ</p>
+            <button class="buy-now" onclick="addToCart('Đàn Piano Kawai')">Mua ngay</button>
+        </div>
+		<li>
+		<div id="cart">
+    <h3>Giỏ hàng</h3>
+    <ul id="cart-items"></ul>
+    <p>Tổng cộng: <span id="total-price">0</span>đ</p>
+</div>
+		<body>
